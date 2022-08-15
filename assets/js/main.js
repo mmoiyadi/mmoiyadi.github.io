@@ -176,9 +176,20 @@ function getDataFromProfileApi(){
   })
   .then(function(data){
     console.log(data);
-    document.getElementById("ride-count").value = data.count
-    document.getElementById("ride-distance").value = (data.distance / 1000).toString() + " Km"
-    document.getElementById("ride-hours").value = (data.movingTime / 3600).toString() + " Hrs"
+    // ride details
+    document.getElementById("ride-count").innerHTML = data.ride.count
+    document.getElementById("ride-distance").innerHTML = Math.round((data.ride.distance / 1000)).toString() + " Km"
+    document.getElementById("ride-hours").innerHTML = Math.round((data.ride.movingTime / 3600)).toString() + " Hrs"
+
+    // swim details
+    document.getElementById("swim-count").innerHTML = data.swim.count
+    document.getElementById("swim-distance").innerHTML = Math.round((data.swim.distance / 1000)).toString() + " Km"
+    document.getElementById("swim-hours").innerHTML = Math.round((data.swim.movingTime / 3600)).toString() + " Hrs"
+
+    // run details
+    document.getElementById("run-count").innerHTML = data.run.count
+    document.getElementById("run-distance").innerHTML = Math.round((data.run.distance / 1000)).toString() + " Km"
+    document.getElementById("run-hours").innerHTML = Math.round((data.run.movingTime / 3600)).toString() + " Hrs"
   })
   .catch(function(err){
     alert('ERROR!!!');

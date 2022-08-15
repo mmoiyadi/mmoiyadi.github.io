@@ -114,18 +114,42 @@
                         <a style="display:inline-block;background-color:#FC5200;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('https://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/22804963' target="_clean">
                           Follow me on <img src='https://badges.strava.com/logo-strava.png' alt='Strava' style='margin-left:2px;vertical-align:text-bottom' height=13 width=51 />
                         </a>
+                        <div class="spinner-border m-5" role="status">
+                          <span class="sr-only">Loading...</span>
+                        </div>
                         <button class="btn btn-primary" type = "button" onclick = "getDataFromProfileApi()">Year to Date Ride Details</button>
-                        <div class="card" id="ride-details">
-                          <div class="card-body">
-                            <h5 class="card-title">Year To Date Ride Details</h5>
-                            <p class="card-text">Count:</p>
-                            <input type="text" id="ride-count" disabled="true"></input>
-                            <p class="card-text">Distance:</p>
-                            <input type="text" id="ride-distance" disabled="true"></input>
-                            <p class="card-text">Moving Time:</p>
-                            <input type="text" id="ride-hours" disabled="true"></input>
-                            <!-- <a target="_blank" href="https://drive.google.com/file/d/1AN3hKW5aM9huOzo3vQs0dbY70dShtVTG/view?usp=sharing" class="btn btn-primary">View Degree</a> -->
-                            </div>
+                        
+                        <div>
+                          <table class="table table-borderless table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">Year To Date</th>
+                                <th data-toggle="tooltip" title="Count" scope="col"><i class="fas fa-hashtag"></i></th>
+                                <th data-toggle="tooltip" title="Distance" scope="col"><i class="fas fa-road"></i></th>
+                                <th data-toggle="tooltip" title="Moving Time" scope="col"><i class="fas fa-stopwatch"></i></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th data-toggle="tooltip" title="Ride" scope="row"><i class="fas fa-bicycle"></i></th>
+                                <td id="ride-count"></td>
+                                <td id="ride-distance"></td>
+                                <td id="ride-hours"></td>
+                              </tr>
+                              <tr>
+                                <th data-toggle="tooltip" title="Swim" scope="row"><i class="fas fa-swimmer"></i></th>
+                                <td id="swim-count"></td>
+                                <td id="swim-distance"></td>
+                                <td id="swim-hours"></td>
+                              </tr>
+                              <tr>
+                                <th data-toggle="tooltip" title="Run" scope="row"><i class="fas fa-running"></i></th>
+                                <td id="run-count"></td>
+                                <td id="run-distance"></td>
+                                <td id="run-hours"></td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
 					  <div class="tab-pane fade" id="mo-social-github" role="tabpanel">
