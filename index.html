@@ -114,6 +114,19 @@
                         <a style="display:inline-block;background-color:#FC5200;color:#fff;padding:5px 10px 5px 30px;font-size:11px;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:10px center;border-radius:3px;background-image:url('https://badges.strava.com/logo-strava-echelon.png')" href='https://strava.com/athletes/22804963' target="_clean">
                           Follow me on <img src='https://badges.strava.com/logo-strava.png' alt='Strava' style='margin-left:2px;vertical-align:text-bottom' height=13 width=51 />
                         </a>
+                        <button class="btn btn-primary" type = "button" onclick = "getDataFromProfileApi()">Year to Date Ride Details</button>
+                        <div class="card" id="ride-details">
+                          <div class="card-body">
+                            <h5 class="card-title">Year To Date Ride Details</h5>
+                            <p class="card-text">Count:</p>
+                            <input type="text" id="ride-count" disabled="true"></input>
+                            <p class="card-text">Distance:</p>
+                            <input type="text" id="ride-distance" disabled="true"></input>
+                            <p class="card-text">Moving Time:</p>
+                            <input type="text" id="ride-hours" disabled="true"></input>
+                            <!-- <a target="_blank" href="https://drive.google.com/file/d/1AN3hKW5aM9huOzo3vQs0dbY70dShtVTG/view?usp=sharing" class="btn btn-primary">View Degree</a> -->
+                            </div>
+                        </div>
                       </div>
 					  <div class="tab-pane fade" id="mo-social-github" role="tabpanel">
 					  git hub details here
@@ -164,10 +177,14 @@
 					<button class="btn btn-primary" type = "button" onclick = "showQuoteOfTheDay()">Quote of the Day</button>
 				</div>
 				
-				
+				<div class="col-xs-4">
+					<button class="btn btn-primary" type = "button" onclick = "getDataFromProfileApi()">Profile Data</button>
+				</div>
 			</div>
 			
 			<div class="card" id="qotd"></div>
+
+      
 			
 			<hr>
 			<p>Things I <span class="text-danger">love:</span></p>

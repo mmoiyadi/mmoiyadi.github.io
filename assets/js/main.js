@@ -167,3 +167,20 @@ function showQuoteOfTheDay(){
 			console.warn('Something went wrong.', err);
 		});
 		}
+
+function getDataFromProfileApi(){
+  fetch('https://mmoiyadi.herokuapp.com/api/strava/stats')
+  .then(function(response){
+    console.log("Got response from API")
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data);
+    document.getElementById("ride-count").value = data.count
+    document.getElementById("ride-distance").value = (data.distance / 1000).toString() + " Km"
+    document.getElementById("ride-hours").value = (data.movingTime / 3600).toString() + " Hrs"
+  })
+  .catch(function(err){
+    alert('ERROR!!!');
+  });
+}
