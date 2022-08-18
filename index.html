@@ -32,10 +32,9 @@
     </head>
     <body>
 		<div class="container-fluid">
-			<h2 class="text-center text-info">"Site coming soon!!! Please visit again." </h2>
+			<h2 class="text-center text-info">"This website is a work in progress. Feel free to checkout the stuff already in there" </h2>
 			<div class="row">
 				<div class="col-md-10">
-					<h2 class="text-primary text-center">Personal Website</h2>
 					
 					<div class="row">
 					  <div class="col-md-4">
@@ -117,7 +116,7 @@
                         <div class="spinner-border m-5" role="status">
                           <span class="sr-only">Loading...</span>
                         </div>
-                        <button class="btn btn-primary" type = "button" onclick = "getDataFromProfileApi()">Year to Date Ride Details</button>
+                        <button class="btn btn-primary" type = "button" onclick = "getStravaDataFromProfileApi()">Year to Date Ride Details</button>
                         
                         <div>
                           <table class="table table-borderless table-hover">
@@ -179,8 +178,16 @@
                       </div>
                         
                       <div class="tab-pane fade" id="mo-journal-movies" role="tabpanel">
-						<a target="_blank" href="https://letterboxd.com/mmoiyadi/">My Letterboxd profile
-						</a>
+                        <a target="_blank" href="https://simkl.com/5633665">
+                          My Simkl profile
+                        </a>
+                        <button class="btn btn-primary" type = "button" onclick = "getSimklDataFromProfileApi()">
+                          Get Last Watched Movie
+                        </button>
+                        <div>
+                          <label id="last-watched-name"></label>
+                          <img id="last_watched_img" src=""></img>
+                        </div>
                       </div>
                     </div>
                   </div>

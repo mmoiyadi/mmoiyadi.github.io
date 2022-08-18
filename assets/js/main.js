@@ -168,7 +168,7 @@ function showQuoteOfTheDay(){
 		});
 		}
 
-function getDataFromProfileApi(){
+function getStravaDataFromProfileApi(){
   fetch('https://mmoiyadi.herokuapp.com/api/strava/stats')
   .then(function(response){
     console.log("Got response from API")
@@ -194,4 +194,18 @@ function getDataFromProfileApi(){
   .catch(function(err){
     alert('ERROR!!!');
   });
+}
+
+function getSimklDataFromProfileApi(){
+  fetch('https://mmoiyadi.herokuapp.com/api/simkl/lastWatched')
+  .then(function(response){
+    console.log("Got response from Simkl API");
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data);
+    document.getElementById("last-watched-name").innerHTML = data.title;
+    const imgUrl = "https://simkl.in/posters/"+data.poster+"_ca.jpg";
+    $("#last_watched_img").attr("src",imgUrl);
+  })
 }
