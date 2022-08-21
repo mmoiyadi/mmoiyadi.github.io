@@ -209,3 +209,16 @@ function getSimklDataFromProfileApi(){
     $("#last_watched_img").attr("src",imgUrl);
   })
 }
+
+function getGithubFromProfileApi(){
+  fetch('https://mmoiyadi.herokuapp.com/api/Github/zen')
+  .then(function(response){
+    console.log("Got response from Github API");
+    console.log(response);
+    return response.text();
+  })
+  .then(function (data){
+    console.log(data);
+    document.getElementById("github-zen").innerHTML = data;
+  })
+}
